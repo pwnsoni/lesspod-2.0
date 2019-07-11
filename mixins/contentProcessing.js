@@ -33,13 +33,10 @@ export default {
       console.log('A common method')
     },
     isLoggedIn:  function(){
-
-      console.log('in content Processing isLoggedin() method');
-        if(this.$store.state.authUser && this.$store.state.authUser.token) {
-          console.log('logged in')
+        
+      if(this.$store.state.authUser && this.$store.state.authUser.token) {
           return true;
         }else {
-          console.log('log out')
           return false;
         }
 
