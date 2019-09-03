@@ -24,6 +24,7 @@
 <script>
 import Navbar from '../components/NavbarBS.vue'
 import Footer from '../components/Footer.vue'
+import { constants } from 'crypto';
 // import { SidebarMenu } from 'vue-sidebar-menu'
 export default {
   components: {

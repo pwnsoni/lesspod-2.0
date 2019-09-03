@@ -57,6 +57,11 @@ export default {
     Navbar,
     Footer
   },
+  fetch ({ store, redirect }) {
+    if (!store.state.authUser && !store.state.authUser.token) {
+      return redirect('/login')
+    }
+  },
   computed: {
     menus() {
       // return this.$store.state.menus.menuItems

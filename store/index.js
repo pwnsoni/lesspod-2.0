@@ -64,7 +64,8 @@ export const actions = {
       })
     })
     .then((res) => {
-      if (res.status === 401) {
+      if (res.status === 401 || res.status == 400) {
+        this.$toast.success('Bad Credentials.', { duration: 2000 })
         throw new Error('Bad credentials')
       } else {
         this.$toast.success('Successfully logged in.', { duration: 2000 })
@@ -112,6 +113,7 @@ export const actions = {
         console.log('not valid cookie')
       }
     }
+    console.log(auth)
     commit('SET_USER', auth)
     
     if(process.env.NODE_ENV === 'test'){
